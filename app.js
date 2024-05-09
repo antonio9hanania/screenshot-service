@@ -23,6 +23,11 @@ app.get('/', (req, res) => {
   res.send('Screenshot service is running');
 });
 
+app.get('/screenshot', async (req, res) => {
+  await takeScreenshot();
+  res.send('Screenshot taken successfully');
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
